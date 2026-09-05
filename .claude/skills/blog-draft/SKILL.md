@@ -18,7 +18,12 @@ argument-hint: [想法、主題或對話摘要；加上「直接寫」可跳過�
    - 建立 `src/content/posts/<slug>.md`，frontmatter 見下方，`draft: true`。
    - `npm run build` 確認無錯。
    - commit 訊息 `content: 草稿 <標題>`，push branch。
-4. **回報。** 給 Angus：預覽網址、字數、核心想法一句話、你在哪些地方做了判斷（例如標題選擇、刪掉哪些內容）。預覽網址規則：`https://ai-draft-<slug>.mr-loser.pages.dev/posts/<slug>/`，部署約需兩分鐘。
+4. **回報。** 給 Angus：預覽網址、字數、核心想法一句話、你在哪些地方做了判斷（例如標題選擇、刪掉哪些內容）。預覽網址：Cloudflare 會把 branch 名稱的 `/` 換成 `-`，並截斷到 28 個字元當作子網域，例如 `ai/draft-decide-what-not-to-build` 變成 `https://ai-draft-decide-what-not-to.mr-loser.pages.dev`。部署約需兩分鐘。給出網址前先用 curl 確認回 200；不確定時用下面的指令查實際的 alias：
+
+   ```
+   set -a && source .env && set +a
+   curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/mr-loser/deployments?per_page=1&env=preview" | python3 -c "import sys,json;d=json.load(sys.stdin)['result'][0];print(d['deployment_trigger']['metadata'].get('branch'),d['latest_stage']['status'],d.get('aliases'))"
+   ```
 
 ## Frontmatter
 
