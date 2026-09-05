@@ -20,6 +20,8 @@ npm run build    # 正式建置，只含已發布文章
 npm run check    # 型別與 frontmatter 檢查
 ```
 
+已定案的決定與原因見 `docs/decisions.md`。寫文章草稿用 `/blog-draft` skill。
+
 ## 核心原則
 
 1. Markdown + Git 是內容唯一 Source of Truth。
