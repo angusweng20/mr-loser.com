@@ -13,7 +13,7 @@ export const site = {
   ],
   /** 接案／顧問聯絡方式。V1 不做表單，用 mailto。 */
   contactEmail: 'hello@mr-loser.com',
-  author: 'Angus',
+  author: 'Mr.Loser',
   locale: 'zh-TW',
   /** 首頁顯示最近幾篇 */
   homePostCount: 5,
