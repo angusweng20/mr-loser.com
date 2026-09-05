@@ -89,7 +89,8 @@ src/content/posts/     文章 Markdown
 src/content/pages/     About 等單頁
 src/site.config.ts     站名、介紹、聯絡信箱
 src/styles/global.css  全站樣式
-public/admin/          Sveltia CMS
+src/pages/admin/       Sveltia CMS 入口
+public/admin/config.yml Sveltia CMS 設定
 public/images/posts/   文章圖片
 public/_redirects      301 規則
 ```

@@ -1,3 +1,11 @@
+---
+/**
+ * Sveltia CMS 入口。用 Astro 頁面而不是 public/ 靜態檔，
+ * 是為了讓 /admin/ 在本機 dev 與 Cloudflare Pages 行為一致。
+ * 設定檔在 public/admin/config.yml。
+ */
+---
+
 <!doctype html>
 <html lang="zh-TW">
   <head>
@@ -8,6 +16,6 @@
   </head>
   <body>
     <!-- 版本固定，避免自動更新造成意外。要升級時改這一行並在本機測過。 -->
-    <script src="https://unpkg.com/@sveltia/cms@0.205.4/dist/sveltia-cms.js"></script>
+    <script is:inline src="https://unpkg.com/@sveltia/cms@0.205.4/dist/sveltia-cms.js"></script>
   </body>
 </html>
