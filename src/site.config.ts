@@ -12,7 +12,7 @@ export const site = {
     '我是 Mr.Loser 失敗先生。這裡放我對工作、產品與注意力的觀察，每篇聚焦一個核心想法。',
   ],
   /** 接案／顧問聯絡方式。V1 不做表單，用 mailto。 */
-  contactEmail: 'hello@mr-loser.com',
+  contactEmail: 'hi@mr-loser.com',
   author: 'Mr.Loser',
   locale: 'zh-TW',
   /** 首頁顯示最近幾篇 */
