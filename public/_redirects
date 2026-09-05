@@ -1,0 +1,4 @@
+# 已發布的 URL 原則上不變。真的要改 slug 時，在這裡加一行 301，格式：
+#   /posts/old-slug/  /posts/new-slug/  301
+#
+# 說明：https://developers.cloudflare.com/pages/configuration/redirects/

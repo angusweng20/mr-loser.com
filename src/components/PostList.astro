@@ -1,0 +1,24 @@
+---
+import { formatDate, isPublished, postUrl, type Post } from '../lib/posts';
+interface Props {
+  posts: Post[];
+}
+const { posts } = Astro.props;
+const now = new Date();
+---
+
+{posts.length === 0 ? (
+  <p class="muted">還沒有文章。</p>
+) : (
+  <ul class="post-list">
+    {posts.map((p) => (
+      <li>
+        <a href={postUrl(p)}>{p.data.title}</a>
+        {p.data.draft && <span class="badge">草稿</span>}
+        {!p.data.draft && !isPublished(p, now) && <span class="badge">排程</span>}
+        <p class="desc">{p.data.description}</p>
+        <time datetime={p.data.pubDate.toISOString()}>{formatDate(p.data.pubDate)}</time>
+      </li>
+    ))}
+  </ul>
+)}

@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import { site } from '../site.config';
+import { getVisiblePosts } from '../lib/posts';
+
+const posts = (await getVisiblePosts()).slice(0, site.homePostCount);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: site.name,
+  url: site.url,
+  description: site.tagline,
+  author: { '@type': 'Person', name: site.author, url: site.url },
+};
+---
+
+<Base jsonLd={jsonLd}>
+  <section class="home-intro">
+    {site.intro.map((p) => <p>{p}</p>)}
+  </section>
+
+  <h2>最新文章</h2>
+  <PostList posts={posts} />
+  {posts.length > 0 && (
+    <p style="margin-top:1.5rem"><a href="/posts/">所有文章 →</a></p>
+  )}
+</Base>

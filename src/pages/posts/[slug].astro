@@ -1,0 +1,69 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { site } from '../../site.config';
+import { formatDate, getVisiblePosts, isPublished, type Post } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getVisiblePosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, description, pubDate, updatedDate, image, imageAlt, draft } = post.data;
+const unpublished = draft || !isPublished(post);
+const url = new URL(Astro.url.pathname, Astro.site).toString();
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate ?? pubDate).toISOString(),
+  author: { '@type': 'Person', name: site.author, url: site.url },
+  mainEntityOfPage: url,
+  inLanguage: site.locale,
+  ...(image ? { image: new URL(image, Astro.site).toString() } : {}),
+};
+---
+
+<Base
+  title={title}
+  description={description}
+  type="article"
+  image={image}
+  imageAlt={imageAlt}
+  publishedTime={pubDate}
+  modifiedTime={updatedDate}
+  noindex={unpublished}
+  jsonLd={jsonLd}
+>
+  <article>
+    <header class="article-header">
+      <h1>
+        {title}
+        {draft && <span class="badge">草稿</span>}
+        {!draft && unpublished && <span class="badge">排程</span>}
+      </h1>
+      <p class="meta">
+        <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+        {updatedDate && <span>　更新於 {formatDate(updatedDate)}</span>}
+      </p>
+    </header>
+    <div class="article-body">
+      <Content />
+    </div>
+    <footer class="article-footer">
+      <p>
+        對這個主題有想聊的，或想找我合作，寫信到
+        <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>。
+      </p>
+      <p><a href="/posts/">← 所有文章</a></p>
+    </footer>
+  </article>
+</Base>

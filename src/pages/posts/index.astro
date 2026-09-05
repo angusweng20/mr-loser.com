@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { getVisiblePosts } from '../../lib/posts';
+
+const posts = await getVisiblePosts();
+---
+
+<Base title="文章" description="所有文章，新到舊。">
+  <h1>文章</h1>
+  <PostList posts={posts} />
+</Base>

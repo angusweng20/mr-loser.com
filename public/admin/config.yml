@@ -1,0 +1,117 @@
+# Sveltia CMS 設定。
+# 文件：https://sveltiacms.app/en/docs
+#
+# 部署前要改的兩個值：
+#   1. backend.repo      → 你的 GitHub 帳號/倉庫名
+#   2. backend.base_url  → sveltia-cms-auth Worker 的網址（見 README）
+
+backend:
+  name: github
+  repo: OWNER/mr-loser.com
+  branch: main
+  base_url: https://sveltia-cms-auth.YOUR-SUBDOMAIN.workers.dev
+  # CMS 送出的 commit 訊息，方便在 git log 分辨來源
+  commit_messages:
+    create: "content: 新增 {{slug}}"
+    update: "content: 更新 {{slug}}"
+    delete: "content: 刪除 {{slug}}"
+    uploadMedia: "media: 上傳 {{path}}"
+    deleteMedia: "media: 刪除 {{path}}"
+
+site_url: https://mr-loser.com
+display_url: https://mr-loser.com
+locale: zh-TW
+
+# 圖片存進 repo。上傳時自動轉 WebP、縮到最長邊 1600px，單檔上限 5MB。
+media_folder: public/images/posts
+public_folder: /images/posts
+media_libraries:
+  default:
+    config:
+      max_file_size: 5242880
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 1600
+          height: 1600
+        svg:
+          optimize: true
+
+# slug 只允許小寫英文、數字、連字號
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: posts
+    label: 文章
+    label_singular: 文章
+    folder: src/content/posts
+    create: true
+    extension: md
+    format: yaml-frontmatter
+    # 檔名 = slug 欄位。URL 也是。發布後不要改。
+    slug: "{{fields.slug}}"
+    summary: "{{title}}　—　{{pubDate}}"
+    sortable_fields: [pubDate, title]
+    preview_path: "posts/{{fields.slug}}/"
+    fields:
+      - name: title
+        label: 標題
+        widget: string
+      - name: slug
+        label: Slug（網址，英文小寫，發布後不可改）
+        widget: string
+        pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "只能用小寫英文、數字與連字號，例如 attention-is-scarce"]
+      - name: description
+        label: 摘要（列表、搜尋結果與分享預覽會顯示，160 字內）
+        widget: text
+      - name: pubDate
+        label: 發布時間（設在未來即為排程發布，每天 09:00 自動檢查）
+        widget: datetime
+        format: "YYYY-MM-DDTHH:mm:ssZ"
+        default: "{{now}}"
+      - name: updatedDate
+        label: 更新時間
+        widget: datetime
+        format: "YYYY-MM-DDTHH:mm:ssZ"
+        required: false
+      - name: draft
+        label: 草稿（勾選則不會公開）
+        widget: boolean
+        default: true
+      - name: image
+        label: 分享預覽圖（選填）
+        widget: image
+        required: false
+      - name: imageAlt
+        label: 預覽圖說明文字
+        widget: string
+        required: false
+      - name: body
+        label: 內文
+        widget: richtext
+        modes: [rich_text, raw]
+        buttons: [bold, italic, strikethrough, code, link, heading-two, heading-three, bulleted-list, numbered-list, quote]
+        editor_components: [image, code-block]
+
+  - name: pages
+    label: 頁面
+    files:
+      - name: about
+        label: 關於
+        file: src/content/pages/about.md
+        fields:
+          - name: title
+            label: 標題
+            widget: string
+          - name: description
+            label: 摘要
+            widget: string
+            required: false
+          - name: body
+            label: 內文
+            widget: richtext
