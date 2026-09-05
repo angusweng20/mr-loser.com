@@ -4,6 +4,7 @@
 
 ## 2026-09-05
 
+- **新草稿寫完直接 merge 進 main，發布閘門是 `draft` 欄位。** 原因：CMS 只讀 main，草稿留在 branch 後台看不到。`draft: true` 不會公開，所以進 main 沒有風險。修改已發布文章仍走 branch，Angus 看 diff 後 merge。
 - **寄信維持 Gmail 以 hi@ 名義寄出，DMARC 不對齊先接受。** 原因：p=none 不會被拒收，流量小、對象多為個人信箱。若進企業垃圾桶再換第三方 SMTP。
 - **信箱 hi@mr-loser.com 用 Cloudflare Email Routing 轉寄到 Gmail。** 免費，不需要信箱服務。GoDaddy 的舊郵件紀錄已清除。
 - **站名與作者為 Mr.Loser。** 自稱「失敗先生」。
