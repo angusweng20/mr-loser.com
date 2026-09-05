@@ -1,6 +1,6 @@
 ---
 name: blog-draft
-description: 把想法、聊天內容或一段對話整理成 mr-loser.com 的文章草稿。先給大綱，Angus 確認後才寫正文；Angus 說「直接寫」則跳過大綱。草稿只進 ai/ branch，永遠 draft: true。
+description: 把想法、聊天內容或一段對話整理成 mr-loser.com 的文章草稿。先給大綱，Angus 確認後才寫正文；Angus 說「直接寫」則跳過大綱。草稿永遠 draft: true，寫完 merge 進 main 讓 CMS 看得到；發布由 Angus 在後台把 draft 關掉。
 argument-hint: [想法、主題或對話摘要；加上「直接寫」可跳過大綱]
 ---
 
@@ -18,7 +18,8 @@ argument-hint: [想法、主題或對話摘要；加上「直接寫」可跳過�
    - 建立 `src/content/posts/<slug>.md`，frontmatter 見下方，`draft: true`。
    - `npm run build` 確認無錯。
    - commit 訊息 `content: 草稿 <標題>`，push branch。
-4. **回報。** 給 Angus：預覽網址、字數、核心想法一句話、你在哪些地方做了判斷（例如標題選擇、刪掉哪些內容）。預覽網址：Cloudflare 會把 branch 名稱的 `/` 換成 `-`，並截斷到 28 個字元當作子網域，例如 `ai/draft-decide-what-not-to-build` 變成 `https://ai-draft-decide-what-not-to.mr-loser.pages.dev`。部署約需兩分鐘。給出網址前先用 curl 確認回 200；不確定時用下面的指令查實際的 alias：
+   - 切回 main，`git merge --no-ff ai/draft-<slug>`，push main。草稿是 `draft: true`，不會公開，這一步是為了讓 CMS 後台看得到它。
+4. **回報。** 給 Angus：預覽網址、字數、核心想法一句話、你在哪些地方做了判斷（例如標題選擇、刪掉哪些內容）。提醒他可以在 `/admin/` 直接改，改好把「草稿」取消勾選就是發布。預覽網址：Cloudflare 會把 branch 名稱的 `/` 換成 `-`，並截斷到 28 個字元當作子網域，例如 `ai/draft-decide-what-not-to-build` 變成 `https://ai-draft-decide-what-not-to.mr-loser.pages.dev`。部署約需兩分鐘。給出網址前先用 curl 確認回 200；不確定時用下面的指令查實際的 alias：
 
    ```
    set -a && source .env && set +a
@@ -49,6 +50,6 @@ draft: true
 ## 不可以做
 
 - 不把 `draft` 設成 `false`。
-- 不 commit 到 main，不 merge。
+- 不直接 commit 到 main。只 merge 自己的 `ai/draft-<slug>` branch，不 merge 別的。
 - 不改既有文章。
 - 不在同一個 branch 做草稿以外的事。

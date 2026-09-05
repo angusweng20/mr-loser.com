@@ -46,8 +46,9 @@ npm run check    # 型別與 frontmatter 檢查
 
 ## Git 規則
 
-- **AI 永遠不直接 commit 到 `main`。** 所有修改開 branch，命名 `ai/<簡短描述>`，例如 `ai/draft-attention-scarcity`。
-- Angus 看過 diff 之後自己 merge。
+- **AI 不直接 commit 到 `main`。** 所有修改開 branch，命名 `ai/<簡短描述>`。
+- **新草稿是例外：** 寫在 `ai/draft-<slug>` branch，建置通過後 AI 可以自己 merge 進 main，因為 `draft: true` 的文章不會公開，而且 CMS 只讀 main，草稿不進 main 後台就看不到。發布的閘門是 `draft` 欄位，只有 Angus 能把它改成 `false`。
+- **其他修改**（已發布文章的正文、網站程式、設定）由 Angus 看過 diff 之後自己 merge。
 - 不 force push、不改寫已 push 的歷史、不刪除 branch 以外的東西。
 - 一個 branch 做一件事。寫一篇草稿是一件事，修 SEO 是另一件事。
 - Commit 訊息用中文，前綴：`content:` 文章、`seo:` 技術 SEO、`site:` 網站程式、`chore:` 其他。
@@ -94,7 +95,7 @@ imageAlt: 圖片說明                      # 有 image 就要有 imageAlt
 
 - Angus 明確說「直接寫」時可以跳過大綱。
 - AI 可以主動推薦有搜尋機會的題目，但不得自動產文。
-- Draft 一律 `draft: true`，一律在 `ai/` branch。
+- Draft 一律 `draft: true`。寫在 `ai/draft-<slug>` branch，建置通過後 merge 進 main，讓 CMS 看得到。
 
 ### AI 可以做
 
