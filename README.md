@@ -45,7 +45,7 @@ CMS 是靜態頁面，登入 GitHub 需要一個 Worker 當 OAuth 中介，來�
 ## 日常流程
 
 - **寫文章**：本機用 Claude Code，或手機用 `/admin/`。新文章一律 `draft: true`。
-- **預覽**：push 到任何非 main 的 branch，會部署到 `https://<branch>.mr-loser.pages.dev`，草稿與排程文章都看得到。
+- **預覽**：push 到任何非 main 的 branch，會部署到 `https://<branch 名稱，/ 換成 -，最多 28 字元>.mr-loser.pages.dev`，草稿與排程文章都看得到。
 - **發布**：把 `draft` 改成 `false`，merge 進 `main`。`pubDate` 在未來則等排程。
 - **改網址**：不改。真的要改，`public/_redirects` 加一行 301。
 - **備份**：這台 Mac mini 的 clone 就是備份。GitHub 是另一份。
