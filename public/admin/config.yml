@@ -7,9 +7,9 @@
 
 backend:
   name: github
-  repo: OWNER/mr-loser.com
+  repo: angusweng20/mr-loser.com
   branch: main
-  base_url: https://sveltia-cms-auth.YOUR-SUBDOMAIN.workers.dev
+  base_url: https://sveltia-cms-auth.angusweng20.workers.dev
   # CMS 送出的 commit 訊息，方便在 git log 分辨來源
   commit_messages:
     create: "content: 新增 {{slug}}"
