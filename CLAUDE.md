@@ -9,7 +9,7 @@ Angus 的個人品牌網站。內容是 800 到 1,500 字的中文注意力寫�
 - 內容唯一 Source of Truth：`src/content/` 底下的 Markdown，由 Git 管理。
 - 圖片放 repo：`public/images/posts/`。
 - CMS：Sveltia，掛在 `/admin/`，設定在 `public/admin/config.yml`。
-- 排程發布：`.github/workflows/scheduled-publish.yml` 每天 09:00 台北時間觸發重建。
+- 部署：`.github/workflows/deploy.yml` 建置後用 wrangler 上傳 Cloudflare Pages；每天 09:00 台北時間重建一次，實現排程發布。
 - 沒有 Database、沒有 Backend、沒有 Server。不要加。
 
 指令：
