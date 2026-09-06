@@ -2,11 +2,18 @@
 name: blog-draft
 description: 把想法、聊天內容或一段對話整理成 mr-loser.com 的文章草稿。先給大綱，Angus 確認後才寫正文；Angus 說「直接寫」則跳過大綱。草稿永遠 draft: true，寫完 merge 進 main 讓 CMS 看得到；發布由 Angus 在後台把 draft 關掉。
 argument-hint: [想法、主題或對話摘要；加上「直接寫」可跳過大綱]
+version: 1.1.0
+author: Angus
+metadata:
+  hermes:
+    tags: [blog, writing, draft, mr-loser.com]
 ---
 
 # /blog-draft
 
-把 $ARGUMENTS 變成一篇 mr-loser.com 的草稿。先讀 repo 根目錄的 CLAUDE.md，裡面的原則與語氣規則優先於這份文件。
+把 $ARGUMENTS（或使用者這次的要求與對話內容）變成一篇 mr-loser.com 的草稿。
+
+**工作目錄是 `~/Projects/mr-loser.com`**，所有 git 與 npm 指令都在那裡執行。先讀該目錄的 CLAUDE.md，裡面的原則與語氣規則優先於這份文件。
 
 ## 流程
 
