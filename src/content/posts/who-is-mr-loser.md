@@ -4,7 +4,7 @@ slug: who-is-mr-loser
 description: 失敗先生 Mr. Loser （又叫成功他媽）的自我介紹：從承認失敗開始，練習學習、思考與行動。
 pubDate: 2023-04-02T09:00:00+08:00
 updatedDate: ''
-draft: true
+draft: false
 image: ''
 imageAlt: ''
 ---
