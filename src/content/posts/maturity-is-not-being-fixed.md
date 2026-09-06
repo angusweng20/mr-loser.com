@@ -8,7 +8,7 @@ draft: false
 category: how-to-lose
 authorship: human
 image: /images/posts/s__63840259.webp
-imageAlt: ''
+imageAlt: 《納瓦爾寶典》書籍封面
 ---
 
 ## 這篇在寫什麼
