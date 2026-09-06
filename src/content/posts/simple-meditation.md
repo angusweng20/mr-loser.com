@@ -4,7 +4,7 @@ slug: simple-meditation
 description: 冥想不是什麼都不想，而是用呼吸與提問，開啟一次和自己的對話。
 pubDate: 2023-04-17T09:00:00+08:00
 updatedDate: ''
-draft: true
+draft: false
 category: adhd
 authorship: human
 image: ''
