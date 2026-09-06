@@ -1,8 +1,8 @@
 ---
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { site } from '../../site.config';
-import { formatDate, getVisiblePosts, isPublished, type Post } from '../../lib/posts';
+import { authorship as authorshipMap, site } from '../../site.config';
+import { categoryLabel, categoryUrl, formatDate, getVisiblePosts, isPublished, type Post } from '../../lib/posts';
 
 export async function getStaticPaths() {
   const posts = await getVisiblePosts();
@@ -14,7 +14,8 @@ interface Props {
 }
 const { post } = Astro.props;
 const { Content } = await render(post);
-const { title, description, pubDate, updatedDate, image, imageAlt, draft } = post.data;
+const { title, description, pubDate, updatedDate, image, imageAlt, draft, category, authorship } = post.data;
+const author = authorshipMap[authorship];
 const unpublished = draft || !isPublished(post);
 const url = new URL(Astro.url.pathname, Astro.site).toString();
 
@@ -28,6 +29,8 @@ const jsonLd = {
   author: { '@type': 'Person', name: site.author, url: site.url },
   mainEntityOfPage: url,
   inLanguage: site.locale,
+  articleSection: categoryLabel(category),
+  digitalSourceType: author.schema,
   ...(image ? { image: new URL(image, Astro.site).toString() } : {}),
 };
 ---
@@ -52,6 +55,8 @@ const jsonLd = {
       </h1>
       <p class="meta">
         <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+        <span class="sep">·</span>
+        <a class="cat" href={categoryUrl(category)}>{categoryLabel(category)}</a>
         {updatedDate && <span>　更新於 {formatDate(updatedDate)}</span>}
       </p>
     </header>
@@ -59,6 +64,7 @@ const jsonLd = {
       <Content />
     </div>
     <footer class="article-footer">
+      <p class="authorship" data-authorship={authorship}>{author.label}</p>
       <p>
         對這個主題有想聊的，或想找我合作，寫信到
         <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>。

@@ -4,6 +4,8 @@ slug: simple-meditation
 description: 冥想不是什麼都不想，而是用呼吸與提問，開啟一次和自己的對話。
 pubDate: 2023-04-17T09:00:00+08:00
 draft: true
+category: adhd
+authorship: human
 ---
 
 標題:冥想怎麼做？冥想可以很簡單

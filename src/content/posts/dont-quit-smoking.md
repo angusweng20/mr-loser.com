@@ -5,6 +5,8 @@ description: 從一次戒菸失敗開始，記錄我如何靠動機與延遲決�
 pubDate: 2023-05-30T09:00:00+08:00
 updatedDate: ''
 draft: false
+category: how-to-lose
+authorship: human
 image: ''
 imageAlt: ''
 ---

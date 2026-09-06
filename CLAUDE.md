@@ -72,12 +72,16 @@ description: 一句話摘要，160 字內。列表、搜尋結果與分享預覽
 pubDate: 2026-09-05T09:00:00+08:00   # 設在未來 = 排程發布
 updatedDate: 2026-09-10T09:00:00+08:00 # 選填
 draft: true                            # true = 不公開
+category: ai-technology                # how-to-lose | adhd | ai-technology
+authorship: ai-assisted                # human | ai-assisted | ai
 image: /images/posts/xxx.webp          # 選填，分享預覽圖
 imageAlt: 圖片說明                      # 有 image 就要有 imageAlt
 ---
 ```
 
 - 新草稿一律 `draft: true`。只有 Angus 把它改成 `false`。
+- `category` 必填，三選一。分類定義在 `src/site.config.ts`，新增分類要同時改 `content.config.ts` 與 `public/admin/config.yml`，已上線的 key 不改。
+- `authorship` 誠實標。AI 依 Angus 的想法整理的稿一律 `ai-assisted`；Angus 自己寫的才是 `human`；`ai` 保留給 Angus 明確要 AI 產文的情況。這個欄位會顯示在文章底部，並以 schema.org 的 `digitalSourceType` 提供給搜尋引擎。
 - `pubDate` 一律帶時區 `+08:00`。
 
 ### 圖片

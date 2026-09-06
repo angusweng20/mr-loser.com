@@ -4,6 +4,8 @@ slug: mentors-for-losers
 description: 記錄幾位在低潮時帶來陪伴、指引與啟發的重要導師。
 pubDate: 2023-04-07T09:00:00+08:00
 draft: true
+category: how-to-lose
+authorship: human
 ---
 
 這裡介紹啟發Mr. Loser失敗先生的重要導師，他們在我最低落的時候陪伴我、指引我、啟發我，即便他們可能不認識我，但對我來說他們對我的影響真的意義非凡，希望透過向他們學習，成為更好的自己。

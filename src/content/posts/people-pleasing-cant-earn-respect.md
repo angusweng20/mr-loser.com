@@ -5,6 +5,8 @@ description: 從討好的動機與行為出發，整理我如何練習把話說�
 pubDate: 2023-07-26T09:00:00+08:00
 updatedDate: 2026-09-06T11:55:00+08:00
 draft: false
+category: how-to-lose
+authorship: human
 image: ''
 imageAlt: ''
 ---

@@ -2,6 +2,10 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
+/** CMS 對沒填的選填欄位會寫入空字串，這裡把空字串當成沒填。 */
+const optionalString = () => z.preprocess((v) => (v === '' ? undefined : v), z.string().optional());
+const optionalDate = () => z.preprocess((v) => (v === '' ? undefined : v), z.coerce.date().optional());
+
 /**
  * 文章。
  * - 檔案位置：src/content/posts/<slug>.md
@@ -17,11 +21,15 @@ const posts = defineCollection({
       .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'slug 只能用小寫英文、數字與連字號'),
     description: z.string().min(1).max(160),
     pubDate: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
+    updatedDate: optionalDate(),
     draft: z.boolean().default(false),
+    /** 分類，對應 site.config.ts 的 categories */
+    category: z.enum(['how-to-lose', 'adhd', 'ai-technology']),
+    /** 作者屬性：human 人寫、ai-assisted AI 協助整理、ai AI 產文 */
+    authorship: z.enum(['human', 'ai-assisted', 'ai']).default('human'),
     /** OG 圖片，路徑以 /images/ 開頭 */
-    image: z.string().optional(),
-    imageAlt: z.string().optional(),
+    image: optionalString(),
+    imageAlt: optionalString(),
   }),
 });
 
@@ -30,7 +38,7 @@ const pages = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
   schema: z.object({
     title: z.string().min(1),
-    description: z.string().optional(),
+    description: optionalString(),
   }),
 });
 

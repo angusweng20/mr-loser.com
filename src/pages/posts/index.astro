@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PostList from '../../components/PostList.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
 import { getVisiblePosts } from '../../lib/posts';
 
 const posts = await getVisiblePosts();
@@ -8,5 +9,6 @@ const posts = await getVisiblePosts();
 
 <Base title="文章" description="所有文章，新到舊。">
   <h1>文章</h1>
+  <CategoryNav />
   <PostList posts={posts} />
 </Base>

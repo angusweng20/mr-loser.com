@@ -4,6 +4,8 @@ slug: second-brain-write-it-down
 description: 記憶力差不是藉口；從寫下來、整理，到建立超輕量的記憶系統。
 pubDate: 2023-04-30T09:00:00+08:00
 draft: true
+category: adhd
+authorship: human
 ---
 
 ### 文章重點

@@ -18,7 +18,7 @@ metadata:
 ## 流程
 
 1. **判斷是否跳過大綱。** 只有 Angus 明確說「直接寫」才跳過。否則先做第 2 步，停下來等確認。
-2. **大綱。** 一句話寫出核心想法，再列三到五個段落標題與每段一句話說明。同時提出 slug 與 description。用一段話說明「接下來會建立哪個檔案、開哪個 branch」，然後結束回合，等 Angus 回覆。
+2. **大綱。** 一句話寫出核心想法，再列三到五個段落標題與每段一句話說明。同時提出 slug、description 與分類（how-to-lose / adhd / ai-technology 三選一，說明理由）。用一段話說明「接下來會建立哪個檔案、開哪個 branch」，然後結束回合，等 Angus 回覆。
 3. **寫草稿。** 確認之後或「直接寫」時：
    - `git checkout main && git pull --ff-only`
    - `git checkout -b ai/draft-<slug>`
@@ -42,6 +42,8 @@ slug: english-lowercase-with-hyphens
 description: 一句話摘要，160 字內
 pubDate: <今天日期>T09:00:00+08:00
 draft: true
+category: <三選一>
+authorship: ai-assisted   # 由這個 skill 產生的稿一律是 ai-assisted，不要改成 human
 ---
 ```
 

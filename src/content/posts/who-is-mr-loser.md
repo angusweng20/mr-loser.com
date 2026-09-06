@@ -5,6 +5,8 @@ description: 失敗先生 Mr. Loser （又叫成功他媽）的自我介紹：�
 pubDate: 2023-04-02T09:00:00+08:00
 updatedDate: ''
 draft: false
+category: how-to-lose
+authorship: human
 image: ''
 imageAlt: ''
 ---

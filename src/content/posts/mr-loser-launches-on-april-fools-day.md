@@ -4,6 +4,8 @@ slug: mr-loser-launches-on-april-fools-day
 description: 在愚人節上線的 Mr. Loser，記錄一個失敗者如何開始面對自己與學習成長。
 pubDate: 2023-04-01T09:00:00+08:00
 draft: true
+category: how-to-lose
+authorship: human
 ---
 
 4月1日上線的意義

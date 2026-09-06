@@ -5,6 +5,8 @@ description: 《納瓦爾寶典》讓我重新理解成熟：不是壓掉內在�
 pubDate: 2026-09-06T11:42:00+08:00
 updatedDate: 2026-09-06T11:44:00+08:00
 draft: false
+category: how-to-lose
+authorship: human
 image: /images/posts/s__63840259.webp
 imageAlt: ''
 ---
