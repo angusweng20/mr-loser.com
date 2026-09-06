@@ -8,7 +8,7 @@ draft: true
 category: how-to-lose
 authorship: human
 image: /images/posts/30ce7e0b-26ee-4224-89b7-1803a9bef74b.webp
-imageAlt: ''
+imageAlt: 《塔木德格言大全集》書籍封面
 ---
 
 初次書評給了一本解讀傳世古書「塔木德」的中文書籍「塔木德格言大全集」，由布拉格文創社出版，編者林郁用淺白的文字闡述了塔木德中所記載的許多格言金句，讀起來輕鬆愉快，又不期而遇的能收穫古書中的智慧，雖有不足之處，仍值得推薦。
