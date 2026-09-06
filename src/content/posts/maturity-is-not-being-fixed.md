@@ -3,7 +3,7 @@ title: 《納瓦爾寶典》讀後摘：成熟不是把自己定型
 slug: almanack-of-naval-ravikant-maturity
 description: 《納瓦爾寶典》讓我重新理解成熟：不是壓掉內在的小孩，也不是要求自己與關係永遠不變。
 pubDate: 2026-09-06T11:42:00+08:00
-updatedDate: ''
+updatedDate: 2026-09-06T11:42:00+08:00
 draft: false
 image: /images/posts/s__63840259.webp
 imageAlt: ''
