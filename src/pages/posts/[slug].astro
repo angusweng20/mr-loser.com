@@ -60,6 +60,11 @@ const jsonLd = {
         {updatedDate && <span>　更新於 {formatDate(updatedDate)}</span>}
       </p>
     </header>
+    {image && (
+      <figure class="cover">
+        <img src={image} alt={imageAlt ?? ''} width="1600" loading="eager" decoding="async" />
+      </figure>
+    )}
     <div class="article-body">
       <Content />
     </div>
