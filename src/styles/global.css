@@ -349,3 +349,13 @@ td {
   font-size: 0.875rem;
   color: var(--muted);
 }
+
+/* 封面圖 */
+.cover {
+  margin: 0 0 2.5rem;
+}
+.cover img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}

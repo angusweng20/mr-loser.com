@@ -99,11 +99,11 @@ collections:
           - { label: "AI 協助：AI 依作者想法整理，作者審閱", value: ai-assisted }
           - { label: "AI 產文：AI 生成，作者僅設題與審閱", value: ai }
       - name: image
-        label: 分享預覽圖（選填）
+        label: 封面圖（顯示在文章頂部，也用於分享預覽，選填）
         widget: image
         required: false
       - name: imageAlt
-        label: 預覽圖說明文字
+        label: 封面圖說明文字（alt，有封面圖就要填）
         widget: string
         required: false
       - name: body
