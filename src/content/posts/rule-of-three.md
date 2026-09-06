@@ -4,6 +4,8 @@ slug: rule-of-three
 description: 用「3 的法則」整理思維，並運用在會議、出遊規劃與每日任務。
 pubDate: 2023-05-02T09:00:00+08:00
 draft: true
+category: how-to-lose
+authorship: human
 ---
 
 ### 文章重點

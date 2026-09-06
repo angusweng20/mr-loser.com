@@ -4,6 +4,8 @@ slug: mentor-alvin
 description: 艾爾文帶給我的思維模型啟發，以及我如何開始練習更清晰地思考。
 pubDate: 2023-04-13T09:00:00+08:00
 draft: true
+category: how-to-lose
+authorship: human
 ---
 
 關鍵字：艾爾文，youtuber，知識變現，投資理財，自我成長，自媒體，創意，成功

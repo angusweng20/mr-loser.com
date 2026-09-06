@@ -4,6 +4,8 @@ slug: success-through-failure
 description: 從失敗反推成功：用穩定的心態、清晰的思維與責任，重新定義成功。
 pubDate: 2023-04-03T09:00:00+08:00
 draft: true
+category: how-to-lose
+authorship: human
 ---
 
 關鍵字：失敗 成功 思維模型 創業失敗

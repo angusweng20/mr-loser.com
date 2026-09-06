@@ -4,6 +4,8 @@ slug: tomorrow-is-my-turn
 description: Netflix 影集《串流王者》插曲〈Tomorrow Is My Turn〉的紀錄與參考資料。
 pubDate: 2023-04-21T09:00:00+08:00
 draft: true
+category: how-to-lose
+authorship: human
 ---
 
 Tomorrow Is My Turn

@@ -4,6 +4,8 @@ slug: waking-up-early
 description: 從多次睡過頭造成的災難開始，記錄我如何以習慣系統練習早起。
 pubDate: 2023-04-11T09:00:00+08:00
 draft: true
+category: adhd
+authorship: human
 ---
 
 ### 摘要：

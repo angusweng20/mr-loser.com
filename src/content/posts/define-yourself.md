@@ -4,6 +4,8 @@ slug: define-yourself
 description: 透過不同角度定義、認識與接納自己，才知道真正想追求的是什麼。
 pubDate: 2023-04-05T09:00:00+08:00
 draft: true
+category: how-to-lose
+authorship: human
 ---
 
 ### 摘要：

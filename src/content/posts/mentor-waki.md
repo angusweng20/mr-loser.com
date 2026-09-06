@@ -4,6 +4,8 @@ slug: mentor-waki
 description: 閱讀前哨站站長瓦基，如何啟發我開始寫下失敗與成長的過程。
 pubDate: 2023-04-09T09:00:00+08:00
 draft: true
+category: how-to-lose
+authorship: human
 ---
 
 readingoutpost-webmaster-waki
