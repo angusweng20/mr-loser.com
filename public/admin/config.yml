@@ -55,7 +55,7 @@ collections:
     format: yaml-frontmatter
     # 檔名 = slug 欄位。URL 也是。發布後不要改。
     slug: "{{fields.slug}}"
-    summary: "{{title}}　—　{{pubDate}}"
+    summary: "{{title}}　—　{{category}}　—　{{pubDate}}"
     sortable_fields: [pubDate, title]
     preview_path: "posts/{{fields.slug}}/"
     fields:
@@ -83,6 +83,21 @@ collections:
         label: 草稿（勾選則不會公開）
         widget: boolean
         default: true
+      - name: category
+        label: 分類
+        widget: select
+        options:
+          - { label: "How to lose?", value: how-to-lose }
+          - { label: "ADHD", value: adhd }
+          - { label: "AI/Technology", value: ai-technology }
+      - name: authorship
+        label: 作者屬性（會顯示在文章底部，並提供給搜尋引擎）
+        widget: select
+        default: human
+        options:
+          - { label: "人寫：作者親筆", value: human }
+          - { label: "AI 協助：AI 依作者想法整理，作者審閱", value: ai-assisted }
+          - { label: "AI 產文：AI 生成，作者僅設題與審閱", value: ai }
       - name: image
         label: 分享預覽圖（選填）
         widget: image

@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
+import { categoryKeys, categoryLabel, getVisiblePosts } from '../../lib/posts';
+import type { CategoryKey } from '../../site.config';
+
+export async function getStaticPaths() {
+  const all = await getVisiblePosts();
+  return categoryKeys.map((category) => ({
+    params: { category },
+    props: { posts: all.filter((p) => p.data.category === category) },
+  }));
+}
+
+interface Props {
+  posts: Awaited<ReturnType<typeof getVisiblePosts>>;
+}
+const { posts } = Astro.props;
+const category = Astro.params.category as CategoryKey;
+const label = categoryLabel(category);
+---
+
+<Base title={label} description={`分類「${label}」的所有文章。`}>
+  <h1>{label}</h1>
+  <CategoryNav current={category} />
+  <PostList posts={posts} showCategory={false} />
+</Base>

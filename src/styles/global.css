@@ -311,3 +311,41 @@ td {
     background-color: var(--shiki-dark-bg) !important;
   }
 }
+
+/* 分類與作者屬性 */
+.post-meta {
+  margin: 0.4em 0 0;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.post-meta a.cat,
+.article-header .meta a.cat {
+  text-decoration: none;
+  color: var(--muted);
+}
+.post-meta a.cat:hover,
+.article-header .meta a.cat:hover {
+  color: var(--accent);
+}
+.sep {
+  margin-inline: 0.4em;
+}
+.cat-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 1em;
+  margin: 0 0 1.5rem;
+  font-size: 0.9375rem;
+}
+.cat-nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+.cat-nav a[aria-current="page"] {
+  color: var(--fg);
+  font-weight: 600;
+}
+.authorship {
+  font-size: 0.875rem;
+  color: var(--muted);
+}

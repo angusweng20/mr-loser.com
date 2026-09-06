@@ -4,6 +4,8 @@ slug: decide-what-not-to-build
 description: mr-loser.com 從一份需求文件到能寫、能發、能收信，只花了一個晚上。速度不是來自工具，而是來自先寫清楚的那份「不做清單」。
 pubDate: 2026-09-05T09:00:00+08:00
 draft: true
+category: ai-technology
+authorship: ai-assisted
 ---
 
 今天晚上，這個網站從一份需求文件變成一個能寫、能發、能收信的東西。沒有資料庫，沒有後端，沒有一台要顧的伺服器。

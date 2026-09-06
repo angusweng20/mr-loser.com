@@ -2,6 +2,11 @@
 
 每一條是一個已經定案的決定，新的寫在最上面。改變決定時加新條目，不改舊的。
 
+## 2026-09-06
+
+- **文章分三類：How to lose?、ADHD、AI/Technology。** URL 為 `/category/<key>/`，key 分別是 how-to-lose、adhd、ai-technology，上線後不改。原本建議等十篇再分，Angus 決定現在就要。
+- **每篇文章標註作者屬性 `authorship`：human / ai-assisted / ai。** 這不是分類也不是標籤，是屬性。文章底部顯示一行聲明，JSON-LD 帶 schema.org 的 `digitalSourceType`（IPTC 代碼），llms.txt 也標。AI 依 Angus 想法整理的稿一律 ai-assisted。
+
 ## 2026-09-05
 
 - **新草稿寫完直接 merge 進 main，發布閘門是 `draft` 欄位。** 原因：CMS 只讀 main，草稿留在 branch 後台看不到。`draft: true` 不會公開，所以進 main 沒有風險。修改已發布文章仍走 branch，Angus 看 diff 後 merge。

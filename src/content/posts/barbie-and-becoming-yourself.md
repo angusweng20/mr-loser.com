@@ -4,6 +4,8 @@ slug: barbie-and-becoming-yourself
 description: 從《芭比》談探索自我：成為自己不需要允許，但需要面對受苦。
 pubDate: 2023-08-06T09:00:00+08:00
 draft: true
+category: how-to-lose
+authorship: human
 ---
 
 ### 文章重點

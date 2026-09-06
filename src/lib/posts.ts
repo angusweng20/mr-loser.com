@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { categories, type CategoryKey } from '../site.config';
 
 export type Post = CollectionEntry<'posts'>;
 
@@ -46,3 +47,13 @@ export function formatDate(date: Date): string {
     timeZone: 'Asia/Taipei',
   }).format(date);
 }
+
+export function categoryUrl(key: CategoryKey): string {
+  return `/category/${key}/`;
+}
+
+export function categoryLabel(key: CategoryKey): string {
+  return categories[key];
+}
+
+export const categoryKeys = Object.keys(categories) as CategoryKey[];

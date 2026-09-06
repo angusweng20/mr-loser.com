@@ -19,6 +19,10 @@ const posts = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     draft: z.boolean().default(false),
+    /** 分類，對應 site.config.ts 的 categories */
+    category: z.enum(['how-to-lose', 'adhd', 'ai-technology']),
+    /** 作者屬性：human 人寫、ai-assisted AI 協助整理、ai AI 產文 */
+    authorship: z.enum(['human', 'ai-assisted', 'ai']).default('human'),
     /** OG 圖片，路徑以 /images/ 開頭 */
     image: z.string().optional(),
     imageAlt: z.string().optional(),
