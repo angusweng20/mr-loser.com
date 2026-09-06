@@ -6,8 +6,6 @@ pubDate: 2023-04-21T09:00:00+08:00
 draft: true
 ---
 
-Netflix Spotify
-
 Tomorrow Is My Turn
 
 ### 參考資料：
