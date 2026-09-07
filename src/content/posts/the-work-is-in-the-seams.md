@@ -4,7 +4,7 @@ slug: the-work-is-in-the-seams
 description: 從需求到上線只花一個晚上，卻有大半時間在處理權限、DNS 殘留與工具假設。這是 mr-loser.com 的建置紀錄：選了什麼、為什麼、卡在哪、怎麼解。
 pubDate: 2026-09-06T09:00:00+08:00
 updatedDate: ''
-draft: true
+draft: false
 category: ai-technology
 authorship: ai-assisted
 image: ''
