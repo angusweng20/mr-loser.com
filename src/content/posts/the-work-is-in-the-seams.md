@@ -3,9 +3,12 @@ title: 網站的工程不在程式碼，在接縫
 slug: the-work-is-in-the-seams
 description: 從需求到上線只花一個晚上，卻有大半時間在處理權限、DNS 殘留與工具假設。這是 mr-loser.com 的建置紀錄：選了什麼、為什麼、卡在哪、怎麼解。
 pubDate: 2026-09-06T09:00:00+08:00
+updatedDate: ''
 draft: true
 category: ai-technology
 authorship: ai-assisted
+image: ''
+imageAlt: ''
 ---
 
 這個網站的程式碼一個小時就寫完了。從需求文件到能寫、能發、能收信，花了一個晚上。中間那段時間，沒有一分鐘是在寫程式。
