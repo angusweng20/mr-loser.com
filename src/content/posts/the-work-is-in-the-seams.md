@@ -21,11 +21,11 @@ imageAlt: ''
 
 ## 技術選用，每一項一個理由
 
-- **Astro。** 靜態輸出，Markdown 原生支援，不需要為了一個部落格背一個前端框架。
-- **GitHub。** 所有內容是 Markdown 檔，Git 就是唯一真相來源。網站可以壞，後台可以換，repo 在內容就在。
-- **Cloudflare Pages。** 免費，頻寬不計費，不用顧任何一台機器。原本打算自架在家裡的 Mac mini，被「能不能更少維護」這個問題砍掉。
-- **Sveltia CMS。** 它不是系統，只是一層介面。在後台按儲存，它做的事情就是往 repo 送一個 commit。
-- **Cloudflare 自家的分析。** 免 cookie，所以不用同意橫幅。
+- **[Astro](https://astro.build/)。** 靜態輸出，Markdown 原生支援，不需要為了一個部落格背一個前端框架。
+- **[GitHub](https://github.com/)。** 所有內容是 Markdown 檔，Git 就是唯一真相來源。網站可以壞，後台可以換，repo 在內容就在。
+- **[Cloudflare Pages](https://pages.cloudflare.com/)。** 免費，頻寬不計費，不用顧任何一台機器。原本打算自架在家裡的 Mac mini，被「能不能更少維護」這個問題砍掉。
+- **[Sveltia CMS](https://github.com/sveltia/sveltia-cms)。** 它不是系統，只是一層介面。在後台按儲存，它做的事情就是往 repo 送一個 commit。
+- **[Cloudflare 自家的分析](https://www.cloudflare.com/web-analytics/)。** 免 cookie，所以不用同意橫幅。
 
 ## 部署只有一條 workflow
 
