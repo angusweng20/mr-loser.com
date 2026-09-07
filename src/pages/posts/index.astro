@@ -2,13 +2,36 @@
 import Base from '../../layouts/Base.astro';
 import PostList from '../../components/PostList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
-import { getVisiblePosts } from '../../lib/posts';
+import { getVisiblePosts, groupByYear } from '../../lib/posts';
 
 const posts = await getVisiblePosts();
+const years = groupByYear(posts);
 ---
 
 <Base title="文章" description="所有文章，新到舊。">
-  <h1>文章</h1>
+  <div class="pagehead">
+    <div>
+      <p class="kicker">ARCHIVE — 全部文章</p>
+      <h1>文章</h1>
+      <p class="lede">每篇 800 到 1,500 字，只講一個核心想法，寫完就停。</p>
+    </div>
+    <div class="vmark">寫完就停</div>
+  </div>
+
   <CategoryNav />
-  <PostList posts={posts} />
+
+  {years.length === 0 ? (
+    <p class="muted">還沒有文章。</p>
+  ) : (
+    years.map((g) => (
+      <>
+        <div class="yr-row">
+          <span class="yr">{g.year}</span>
+          <span class="yr-line"></span>
+          <span class="yr-n">{g.posts.length} 篇</span>
+        </div>
+        <PostList posts={g.posts} dateStyle="short" />
+      </>
+    ))
+  )}
 </Base>

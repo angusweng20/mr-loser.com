@@ -22,7 +22,15 @@ const label = categoryLabel(category);
 ---
 
 <Base title={label} description={`分類「${label}」的所有文章。`}>
-  <h1>{label}</h1>
+  <div class="pagehead">
+    <div>
+      <p class="kicker">CATEGORY — 分類</p>
+      <h1>{label}</h1>
+      <p class="lede">{posts.length} 篇。</p>
+    </div>
+    <div class="vmark">{label}</div>
+  </div>
+
   <CategoryNav current={category} />
   <PostList posts={posts} showCategory={false} />
 </Base>

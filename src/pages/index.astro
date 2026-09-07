@@ -2,9 +2,11 @@
 import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
 import { site } from '../site.config';
-import { getVisiblePosts } from '../lib/posts';
+import { getVisiblePosts, postUrl } from '../lib/posts';
 
-const posts = (await getVisiblePosts()).slice(0, site.homePostCount);
+const all = await getVisiblePosts();
+const posts = all.slice(0, site.homePostCount);
+const newest = all[0];
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -16,13 +18,27 @@ const jsonLd = {
 ---
 
 <Base jsonLd={jsonLd}>
-  <section class="home-intro">
-    {site.intro.map((p) => <p>{p}</p>)}
+  <section class="hero-grid">
+    <div class="hero">
+      <p class="kicker">{site.hero.kicker}</p>
+      <h1>
+        {site.hero.lead}<br /><span class="hl">{site.hero.highlight}</span>{site.hero.tail}
+      </h1>
+      {site.intro.map((p) => <p class="lede">{p}</p>)}
+      <div class="actions">
+        {newest && <a class="btn" href={postUrl(newest)}>讀最新一篇</a>}
+        <a class="btn-2" href="/rss.xml">RSS 訂閱</a>
+      </div>
+    </div>
+    <div class="vmark">{site.hero.vmark}</div>
   </section>
 
-  <h2>最新文章</h2>
-  <PostList posts={posts} />
-  {posts.length > 0 && (
-    <p style="margin-top:1.5rem"><a href="/posts/">所有文章 →</a></p>
-  )}
+  <section>
+    <div class="sec-head">
+      <p class="lbl">最新文章<em>LATEST</em></p>
+      <a class="more" href="/posts/">ALL POSTS →</a>
+    </div>
+    <PostList posts={posts} />
+    {posts.length > 0 && <a class="all-link" href="/posts/">所有文章 →</a>}
+  </section>
 </Base>

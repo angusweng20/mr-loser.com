@@ -1,11 +1,22 @@
 ---
-import { categoryLabel, categoryUrl, formatDate, isPublished, postUrl, type Post } from '../lib/posts';
+import {
+  categoryLabel,
+  categoryUrl,
+  formatDateNumeric,
+  formatMonthDay,
+  isPublished,
+  postUrl,
+  type Post,
+} from '../lib/posts';
 interface Props {
   posts: Post[];
   /** 在分類頁本身不需要再顯示分類 */
   showCategory?: boolean;
+  /** 列表已經有年份分隔時，日期只留月日 */
+  dateStyle?: 'full' | 'short';
 }
-const { posts, showCategory = true } = Astro.props;
+const { posts, showCategory = true, dateStyle = 'full' } = Astro.props;
+const showDate = dateStyle === 'short' ? formatMonthDay : formatDateNumeric;
 const now = new Date();
 ---
 
@@ -15,19 +26,20 @@ const now = new Date();
   <ul class="post-list">
     {posts.map((p) => (
       <li>
-        <a href={postUrl(p)}>{p.data.title}</a>
-        {p.data.draft && <span class="badge">草稿</span>}
-        {!p.data.draft && !isPublished(p, now) && <span class="badge">排程</span>}
-        <p class="desc">{p.data.description}</p>
-        <p class="post-meta">
-          <time datetime={p.data.pubDate.toISOString()}>{formatDate(p.data.pubDate)}</time>
+        <div class="rail">
+          <time class="date" datetime={p.data.pubDate.toISOString()}>{showDate(p.data.pubDate)}</time>
           {showCategory && (
-            <>
-              <span class="sep">·</span>
-              <a class="cat" href={categoryUrl(p.data.category)}>{categoryLabel(p.data.category)}</a>
-            </>
+            <a class="cat" href={categoryUrl(p.data.category)}>{categoryLabel(p.data.category)}</a>
           )}
-        </p>
+        </div>
+        <div>
+          <h3 class="p-title">
+            <a href={postUrl(p)}>{p.data.title}</a>
+            {p.data.draft && <span class="badge">草稿</span>}
+            {!p.data.draft && !isPublished(p, now) && <span class="badge">排程</span>}
+          </h3>
+          <p class="p-desc">{p.data.description}</p>
+        </div>
       </li>
     ))}
   </ul>
