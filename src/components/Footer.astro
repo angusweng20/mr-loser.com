@@ -5,11 +5,22 @@ const year = new Date().getFullYear();
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© {year} {site.author}</span>
-    <span>
-      <a href={`mailto:${site.contactEmail}`}>合作洽談</a>
-      &nbsp;·&nbsp;
-      <a href="/rss.xml">RSS</a>
-    </span>
+    <div class="col-grid">
+      <div>
+        <div class="col-mark">{site.nameZh}</div>
+        <div class="col-latin">{site.nameLatin} · {site.domain.toUpperCase()}</div>
+      </div>
+      <div class="col-cta">
+        <span class="k">合作洽談 / WORK WITH ME</span>
+        <p>{site.footerCta}</p>
+        <a class="col-mail" href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
+      </div>
+    </div>
+    <div class="col-bottom">
+      <span>© {year} {site.nameLatin}</span>
+      <span class="zh">
+        <a href="/posts/">文章</a><span class="sp">·</span><a href="/about/">關於</a><span class="sp">·</span><a href="/rss.xml">RSS</a>
+      </span>
+    </div>
   </div>
 </footer>

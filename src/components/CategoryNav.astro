@@ -7,7 +7,7 @@ const { current } = Astro.props;
 ---
 
 <nav class="cat-nav" aria-label="分類">
-  <a href="/posts/" aria-current={current ? undefined : 'page'}>全部</a>
+  <a class="zh" href="/posts/" aria-current={current ? undefined : 'page'}>全部</a>
   {categoryKeys.map((k) => (
     <a href={categoryUrl(k)} aria-current={current === k ? 'page' : undefined}>{categoryLabel(k)}</a>
   ))}

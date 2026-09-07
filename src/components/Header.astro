@@ -10,13 +10,21 @@ const isCurrent = (href: string) =>
   href === '/' ? path === '/' : path.startsWith(href);
 ---
 
+<div class="edge"></div>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/">{site.name}</a>
-    <nav aria-label="主選單">
-      {nav.map((n) => (
-        <a href={n.href} aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>
-      ))}
-    </nav>
+    <div class="masthead">
+      <a class="brand" href="/">
+        <span class="wordmark">{site.nameZh}</span>
+        <span class="latin">{site.nameLatin}</span>
+      </a>
+      <nav aria-label="主選單">
+        {nav.map((n) => (
+          <a href={n.href} aria-current={isCurrent(n.href) ? 'page' : undefined}>{n.label}</a>
+        ))}
+        <a class="rss" href="/rss.xml">RSS</a>
+      </nav>
+    </div>
+    <div class="rule-heavy"></div>
   </div>
 </header>
