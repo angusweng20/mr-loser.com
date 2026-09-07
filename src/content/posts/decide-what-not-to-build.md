@@ -3,9 +3,12 @@ title: 網站一個晚上就上線，因為先決定了不做什麼
 slug: decide-what-not-to-build
 description: mr-loser.com 從一份需求文件到能寫、能發、能收信，只花了一個晚上。速度不是來自工具，而是來自先寫清楚的那份「不做清單」。
 pubDate: 2026-09-05T09:00:00+08:00
-draft: true
+updatedDate: ''
+draft: false
 category: ai-technology
 authorship: ai-assisted
+image: ''
+imageAlt: ''
 ---
 
 今天晚上，這個網站從一份需求文件變成一個能寫、能發、能收信的東西。沒有資料庫，沒有後端，沒有一台要顧的伺服器。
@@ -52,4 +55,4 @@ AI 幫我寫的草稿只進 branch，我看過 diff 才 merge。這不是為了�
 
 ## 所以
 
-一篇文章一個想法。這篇的想法是：先決定不做什麼，剩下的事就會變快。
+先決定不做什麼，剩下的事就會變快。
