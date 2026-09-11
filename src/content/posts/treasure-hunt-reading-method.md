@@ -7,7 +7,7 @@ updatedDate: ''
 draft: true
 category: adhd
 authorship: ai-assisted
-image: ''
+image: /images/posts/5a7497ed-80f3-454f-b4bb-0b23ec41829a.webp
 imageAlt: ''
 ---
 
